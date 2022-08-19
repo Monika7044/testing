@@ -1,0 +1,100 @@
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class name {
+    private int studentNo;
+    private String studentName;
+    private int studentClass;
+    name(int studentNo,String studentName,int studentClass){
+        this.studentNo=studentNo;
+        this.studentName=studentName;
+        this.studentClass=studentClass;
+    }
+
+    public int getstudentNo() {
+        return studentNo;
+    }
+
+    public String getstudentName() {
+        return studentName;
+    }
+
+    public int getstudentClass() {
+        return studentClass;
+    }
+    public String toString(){
+        return studentNo+" "+studentName+""+studentClass;
+    }
+        public static void main(String[]arg){
+            Collection<name> c =new ArrayList<name>();
+            Scanner s = new Scanner(System.in);
+            int ch;
+            do{
+                System.out.println("1.INSERT");
+                System.out.println("2.DISPLAY");
+                System.out.println("3.SEARCH");
+                System.out.println("4.DELETE");
+                System.out.println("5.UPDATE");
+                System.out.println("Enter your choice:");
+                ch = s.nextInt();
+                switch(ch){
+                    case1:
+                    System.out.println("Enter studentNo");
+                    int studentNo = s.nextInt();
+                    System.out.println("Enter the studentName");
+                    String studentName = s.nextLine();
+                    System.out.println("Enter the studentClass");
+                    int studentClass = s.nextInt();
+                    c.add(new name(studentNo,studentName,studentClass));
+                    break;
+
+                    case2:
+                    System.out.println(c);
+
+                    case3:
+                    Boolean f = false;
+                    System.out.print("studentNo");
+                    studentNo = s.nextInt();
+                    Iterator<name> i = c.iterator();
+                    while(i.hasNext()){
+                        name e =i.next();
+                        if(e.studentNo()==studentNo);
+                        System.out.println(e);
+                        f = true;
+                    }
+                }
+                if(!f){
+                    System.out.println("not found");
+                }
+                break;
+                case 4:
+                    Boolean b = false;
+                    System.out.print("studentName");
+                    ename = s.nextLine();
+                    s.nextLine();
+                    i = c.iterator();
+                    while(i.hasNext()){
+                        name e = i.next();
+                        if(e.getEname()==ename){
+                            System.out.println(e);
+                            b = true;
+                        }
+                    }
+                    if(!b){
+                        System.out.println("not found");
+                    }
+                    break;
+
+            }
+
+                    }
+                }
+            }while(ch!=0);
+
+        }
+
+    }
+}
